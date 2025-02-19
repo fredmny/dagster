@@ -225,7 +225,7 @@ def execute_core_compute(
         output.name
         for output in step.step_outputs
         # checks are required if we're in requires_typed_event_stream mode
-        if step_context.requires_typed_event_stream or output.properties.asset_check_key
+        if output.properties.asset_key or output.properties.asset_check_key
     }
     omitted_outputs = expected_op_output_names.difference(emitted_result_names)
     if omitted_outputs:
